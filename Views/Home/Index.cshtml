@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Dijkstra's Algorithm Calculator";
+}
+
+<!-- Top -->
+<div class="top-section text-white py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold">Dijkstra’s Algorithm Calculator</h2>
+        <p class="text-light">Discovering Optimal Routes Through Nodes Using Dijkstra's Method</p>
+    </div>
+</div>
+
+<!-- Bottom -->
+<div class="bottom-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <div class="card shadow rounded-4" style="margin-top:-140px;">
+                    <div class="row g-0">
+
+                        <!-- Left Side -->
+                        <div class="col-md-6 p-4 border-end">
+                            <h5 class="mb-3 fw-semibold text-page">Select Path</h5>
+
+                            <form id="PathForm">
+                                <div class="mb-3">
+                                    <label for="FromNode" class="form-label">From Node</label>
+                                    <select class="form-select" id="FromNode">
+                                        <option selected disabled>Select</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="ToNode" class="form-label">To Node</label>
+                                    <select class="form-select" id="ToNode">
+                                        <option selected disabled>Select</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                    </select>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <button type="reset" class="clear">Clear</button>
+                                    <button type="button" id="btnCalculate" class="calculate">
+                                        Calculate <i class="bi bi-calculator"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Right Side -->
+                        <div class="col-md-6 p-4" id="ResultPanel">
+
+                            <img src="~/images/placeholder.png" alt="Placeholder" class="img-fluid" style="max-height:200px;" id="ResultPlaceholder" />
+
+                            <div class="d-none" id="ResultBox">
+                                <h5 class="mb-3 fw-semibold text-page">Result</h5>
+
+                                <div class="p-3 border rounded text-start bg-white" style="min-height:350px;">
+                                    <p id="ResultText" class="text-dark"></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $("#btnCalculate").click(function () {
+
+            let from = $("#FromNode").val();
+            let to = $("#ToNode").val();
+
+            if (!from || !to || from === "Select" || to === "Select") {
+                alert("Please select both nodes.");
+                return;
+            }
+
+            let result = `From Node = '${from}', To Node = '${to}' : ${from}, B, C, ${to} <br> Total Distance: 10`;
+
+            $("#ResultPlaceholder").addClass("d-none");
+            $("#ResultBox").removeClass("d-none");
+
+            $("#ResultPanel").addClass("bg-light");
+
+            $("#ResultText").html(result);
+
+        });
+
+        $("button[type='reset']").click(function () {
+
+            $("#ResultBox").addClass("d-none");
+            $("#ResultPlaceholder").removeClass("d-none");
+            $("#ResultPanel").removeClass("bg-light");
+        });
+    });
+</script>

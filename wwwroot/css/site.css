@@ -1,0 +1,70 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+    background-color: #e7f3ff;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.top-section {
+    background-color: #1154a3;
+    color: white;
+}
+
+.text-page {
+    color: #1154a3;
+}
+
+.bottom-section {
+    background-color: #e7f3ff;
+}
+button {
+
+    padding: 5px 20px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    button.clear {
+        background-color: transparent;
+        color: #e27d3f; 
+        border: 2px solid #e27d3f;
+    }
+
+        button.clear:hover {
+            background-color: #e27d3f;
+            color: white;
+        }
+
+    button.calculate {
+        background-color: #e27d3f; 
+        color: white;
+        border: 2px solid #e27d3f;
+    }
+
+        button.calculate:hover {
+            background-color: #d66e2f;
+            border-color: #d66e2f;
+        }
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 9rem !important;
+}
